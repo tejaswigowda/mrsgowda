@@ -23,7 +23,7 @@ overflow-x: hidden;
 
         <script>
     var URL = "http://mrsgowda.weebly.com/";
-    function loaddone()
+    function frameloaddone()
     {
        var x = document.getElementById('theiframe').src;
        x = x.split(URL)[1];
@@ -37,7 +37,7 @@ overflow-x: hidden;
         </head>
 
         <body onload='load()'>
-            <iframe id='theframe' src="http://mrsgowda.weebly.com/" width="100%" height="100%"></iframe>
+            <iframe onload='frameloaddone()' id='theframe' src="http://mrsgowda.weebly.com/" width="100%" height="100%"></iframe>
             </body>
 
             </html>
