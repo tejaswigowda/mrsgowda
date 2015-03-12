@@ -37,6 +37,7 @@ overflow-x: hidden;
     function frameReload(url){
        document.getElementById('theiframe').src = url;
        window.location.hash = url;
+       alert(url);
     }
         $("#theframe").load(function(){
             alert(this.contentWindow.location);
