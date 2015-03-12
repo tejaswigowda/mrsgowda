@@ -26,13 +26,15 @@ overflow-x: hidden;
     var URL = "http://mrsgowda.weebly.com/";
     function frameloaddone()
     {
-        var $a = $("#theframe a");
+                var iframe = $('#theframe').contents();
 
-                $a.click(function(x) {
+
+                iframe.find("a").click(function(){
                              x.preventDefault();
                              var url = $(this).attr('href');
                              frameReload(url); // where launchUrl is your function that calls window.open, etc
-                 });
+                        });
+
     }
     function frameReload(url){
        document.getElementById('theiframe').src = url;
