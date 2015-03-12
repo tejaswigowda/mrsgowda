@@ -26,9 +26,17 @@ overflow-x: hidden;
     var URL = "http://mrsgowda.weebly.com/";
     function frameloaddone()
     {
-       var x = document.getElementById('theiframe').src;
-       x = x.split(URL)[1];
-       window.location.hash = x;
+        var $a = $("#"+ id +" a");
+
+                $a.click(function(x) {
+                             x.preventDefault();
+                             var url = $(this).attr('href');
+                             frameReload(url); // where launchUrl is your function that calls window.open, etc
+                 });
+    }
+    function frameReload(url){
+       document.getElementById('theiframe').src = url;
+       window.location.hash = url;
     }
         $("#theframe").load(function(){
             alert(this.contentWindow.location);
