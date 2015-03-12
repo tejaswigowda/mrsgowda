@@ -3,6 +3,7 @@
 
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <title>Mrs Gowda</title>
         <style>
 body
@@ -29,6 +30,9 @@ overflow-x: hidden;
        x = x.split(URL)[1];
        window.location.hash = x;
     }
+        $("#theframe").load(function(){
+            alert(this.contentWindow.location);
+        });
     function load()
     {
         document.getElementById('theiframe').src = URL;
@@ -37,7 +41,7 @@ overflow-x: hidden;
         </head>
 
         <body onload='load()'>
-            <iframe onload='frameloaddone()' id='theframe' src="http://mrsgowda.weebly.com/" width="100%" height="100%"></iframe>
+            <iframe id='theframe' src="http://mrsgowda.weebly.com/" width="100%" height="100%"></iframe>
             </body>
 
             </html>
