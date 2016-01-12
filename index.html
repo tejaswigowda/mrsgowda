@@ -23,6 +23,16 @@ overflow-x: hidden;
         </style>
 
         <script>
+  var iframe = document.getElementsByTagName('theframe')[0],
+   iDoc = iframe.contentWindow // sometimes glamorous naming of variable
+    || iframe.contentDocument; // makes your code working :)
+    if (iDoc.document) {
+         iDoc = iDoc.document;
+          iDoc.body.addEventListener('afterLayout', function(){
+              var x = iDoc.src;
+              console.log(x);
+                });
+
     var URL = "http://mrsgowda.weebly.com/";
     function frameloaddone()
     {
